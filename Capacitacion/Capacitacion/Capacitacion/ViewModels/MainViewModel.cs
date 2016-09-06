@@ -1,4 +1,5 @@
 ﻿using Capacitacion.Pages;
+using Capacitacion.Services;
 using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;
@@ -15,9 +16,11 @@ namespace Capacitacion.ViewModels
         public MainViewModel()
         {
             LoadMenu();
+            LoadUsers();
         }
 
         public ObservableCollection<MenuItemViewModel> Menu { get; set; }
+        public ObservableCollection<UsersViewModel> Users { get; set; }
 
 
 
@@ -46,7 +49,22 @@ namespace Capacitacion.ViewModels
                 Title = "Contact",
                 PageName = "Contact"
             });
+
+            Menu.Add(new MenuItemViewModel()
+            {
+                Icon = "icon",
+                Title = "Users",
+                PageName = "Users"
+            });
         }
+
+        private async void LoadUsers()
+        {
+            var apiService = new ApiService();
+            var result = await apiService.GetData<ObservableCollection<UsersViewModel>>("http://jsonplaceholder.typicode.com/users");
+            Users = result;
+        }
+
         #endregion
 
 

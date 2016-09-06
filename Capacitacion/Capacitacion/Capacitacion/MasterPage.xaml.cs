@@ -20,6 +20,7 @@ namespace Capacitacion
             base.OnAppearing();
             App.Navigator = this.Navigator;
             App.Navigation = Navigation;
+            App.Master = this;
         }
     }
 }

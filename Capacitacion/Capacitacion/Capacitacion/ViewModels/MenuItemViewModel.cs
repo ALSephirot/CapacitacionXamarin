@@ -23,6 +23,7 @@ namespace Capacitacion.ViewModels
 
         public void Navigate()
         {
+            App.Master.IsPresented = false;
             switch (PageName)
             {
                 case "Index":
@@ -33,6 +34,9 @@ namespace Capacitacion.ViewModels
                     break;
                 case "Contact":
                     App.Navigator.PushAsync(new Contact());
+                    break;
+                case "Users":
+                    App.Navigator.PushAsync(new Users());
                     break;
             }
         }
