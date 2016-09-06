@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Capacitacion.Pages.index"
+             Title="Inicio">
+
+    <StackLayout VerticalOptions="Start">
+        <Label Text="Hola, estoy en inicio" VerticalOptions="Center" HorizontalOptions="Center" TextColor="{StaticResource MainColor}"/>
+        <Label Text="Label 2" VerticalOptions="Center" HorizontalOptions="Center" />
+        <Label Text="Label 3" VerticalOptions="Center" HorizontalOptions="Center" />
+        <Button Text="Boton" Clicked="Button_Clicked"></Button>
+    </StackLayout>
+</ContentPage>
